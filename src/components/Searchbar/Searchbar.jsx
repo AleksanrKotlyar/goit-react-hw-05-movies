@@ -13,9 +13,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const Searchbar = ({ value, onChange, getMoviesByQuery }) => {
   const handleOnSubmit = e => {
     e.preventDefault();
-
     const query = e.currentTarget.elements.input.value;
-
     if (query.trim() === '') {
       return toast('Enter a request.', {
         duration: 1000,

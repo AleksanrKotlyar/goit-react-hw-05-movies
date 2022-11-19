@@ -21,9 +21,11 @@ export const Header = styled.header`
   }
 `;
 
-export const Link = styled(NavLink)`
-  padding: ${p => p.theme.space[4]}px ${p => p.theme.space[4]}px;
-  border-radius: ${p => p.theme.space.normal};
+export const Linka = styled(NavLink)`
+  display: inline-block;
+
+  padding: ${p => p.theme.space[2]}px ${p => p.theme.space[2]}px;
+  border-radius: ${p => p.theme.radii.normal};
   text-decoration: none;
   color: black;
   font-weight: 500;
