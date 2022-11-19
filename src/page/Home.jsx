@@ -1,8 +1,7 @@
-import { fetchGenres, getTrending } from 'APIMovies/APImovies';
+import { fetchGenres, getTrending } from 'servises/APImovies';
 import MoviesList from 'components/MoviesList/MoviesList';
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { textAlign } from 'styled-system';
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState(null);

@@ -22,13 +22,17 @@ export const Header = styled.header`
 `;
 
 export const Linka = styled(NavLink)`
-  display: inline-block;
-
+  margin-right: ${p => p.theme.space[4]}px;
   padding: ${p => p.theme.space[2]}px ${p => p.theme.space[2]}px;
   border-radius: ${p => p.theme.radii.normal};
   text-decoration: none;
   color: black;
   font-weight: 500;
+
+  &:hover,
+  &:hover {
+    color: orangered;
+  }
 
   &.active {
     color: white;

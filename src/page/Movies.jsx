@@ -1,4 +1,4 @@
-import { searchMoviesByQuery } from 'APIMovies/APImovies';
+import { searchMoviesByQuery } from 'servises/APImovies';
 import MoviesList from 'components/MoviesList/MoviesList';
 import Searchbar from 'components/Searchbar/Searchbar';
 import { useState } from 'react';

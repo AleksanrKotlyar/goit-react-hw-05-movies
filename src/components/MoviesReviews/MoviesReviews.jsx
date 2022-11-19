@@ -1,4 +1,4 @@
-import { searchReviews } from 'APIMovies/APImovies';
+import { searchReviews } from 'servises/APImovies';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box } from 'Utils/Box';

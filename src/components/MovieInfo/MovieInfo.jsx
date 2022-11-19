@@ -1,17 +1,25 @@
-import { Outlet, useParams } from 'react-router-dom';
-import { searchMovies } from 'APIMovies/APImovies';
+import { Outlet, useParams, useLocation, useNavigate } from 'react-router-dom';
+import { searchMovies } from 'servises/APImovies';
 import { useState, useEffect, Suspense } from 'react';
 import { Box } from '../../Utils/Box';
 import { Circles } from 'react-loader-spinner';
 import toast from 'react-hot-toast';
-import { WrapSpinner, CustLink, CustP, Title } from './MovieInfo.styled';
+import {
+  WrapSpinner,
+  CustLink,
+  CustP,
+  Title,
+  BackButton,
+} from './MovieInfo.styled';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w300';
-const genre = JSON.parse(localStorage.getItem('genresDataArray'));
 
 const MovieInfo = () => {
+  const genre = JSON.parse(localStorage.getItem('genresDataArray'));
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
+  const location = useLocation();
+  const CustomNavigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -55,11 +63,20 @@ const MovieInfo = () => {
     return data;
   }
 
+  const handleGoBack = () => {
+    const backLinkHref = location.state?.from ?? '/';
+
+    CustomNavigate(backLinkHref);
+  };
+
   const { title, release_date, vote_average, overview } = movie;
 
   return (
     <main>
-      <button type="button">Go back</button>
+      <BackButton type="button" onClick={handleGoBack}>
+        Go back
+      </BackButton>
+
       {movie && (
         <>
           <Box
@@ -68,8 +85,9 @@ const MovieInfo = () => {
             alignItems="space-between"
             mt={5}
             mb={5}
+            height="250px"
           >
-            <img src={`${pict}`} width="250px" height="350px" alt="film__img" />
+            <img src={`${pict}`} width="250px" height="330px" alt="film__img" />
             <Box ml={4}>
               <Title>
                 {title} ({release_date?.slice(0, 4)})
@@ -93,10 +111,14 @@ const MovieInfo = () => {
           <h3>Additional information</h3>
           <ul>
             <li>
-              <CustLink to="cast">Cast</CustLink>
+              <CustLink to="cast" state={location.state}>
+                Cast
+              </CustLink>
             </li>
             <li>
-              <CustLink to="reviews">Reviews</CustLink>
+              <CustLink to="reviews" state={location.state}>
+                Reviews
+              </CustLink>
             </li>
           </ul>
           <hr />

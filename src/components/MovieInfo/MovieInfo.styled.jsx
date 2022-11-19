@@ -21,8 +21,34 @@ export const CustP = styled.p`
 export const CustLink = styled(NavLink)`
   text-decoration: none;
   color: black;
+  &:hover,
+  &:hover {
+    color: orangered;
+  }
 
   &.active {
     color: #ff6b08;
+  }
+`;
+
+export const BackButton = styled.button`
+  border-radius: 6px;
+  padding: 7px 10px;
+  border: transparent;
+  outline: none;
+  margin-left: 10px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #ff6b08;
+  color: #ffffffdd;
+  text-decoration: none;
+
+  &:hover,
+  &:hover {
+    background-color: orangered;
+    color: white;
   }
 `;
