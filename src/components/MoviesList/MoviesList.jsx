@@ -9,7 +9,7 @@ import {
 } from './MoviesList.styled';
 
 const MoviesList = ({ data }) => {
-  const BASE_URL = 'https://image.tmdb.org/t/p/w200';
+  const BASE_URL = 'https://image.tmdb.org/t/p/w500';
   const { pathname } = useLocation();
 
   return (
