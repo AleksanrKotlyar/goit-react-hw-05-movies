@@ -26,7 +26,7 @@ async function fetchGenres() {
 
 async function getTrending() {
   try {
-    const response = await axios.get(`/trending/movie/week?api_key=${API_KEY}`);
+    const response = await axios.get(`/trending/movie/day?api_key=${API_KEY}`);
 
     return response.data.results;
   } catch (error) {

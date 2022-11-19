@@ -10,18 +10,15 @@ import {
 
 const MoviesList = ({ data }) => {
   const BASE_URL = 'https://image.tmdb.org/t/p/w500';
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
+  const location = useLocation();
 
   return (
     <MovieGallery>
       {data.map(({ id, backdrop_path, origin_title, title }) => (
         <MovieItem key={id}>
-          <Linka to={`/movies/${id}`} state={{ from: pathname }}>
-            <MovieImage
-              src={`${BASE_URL}${backdrop_path}`}
-              alt="poster"
-              // onClick={() => console.log('нажали')}
-            />
+          <Linka to={`/movies/${id}`} state={{ from: location }}>
+            <MovieImage src={`${BASE_URL}${backdrop_path}`} alt="poster" />
             <MovieTitle>{title || origin_title}</MovieTitle>
           </Linka>
         </MovieItem>

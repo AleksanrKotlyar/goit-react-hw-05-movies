@@ -19,6 +19,7 @@ const MovieInfo = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
   const location = useLocation();
+
   const CustomNavigate = useNavigate();
 
   useEffect(() => {

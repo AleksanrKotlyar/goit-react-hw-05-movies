@@ -10,7 +10,7 @@ import {
 } from './Searchbar.styled';
 import toast, { Toaster } from 'react-hot-toast';
 
-const Searchbar = ({ value, onChange, getMoviesByQuery }) => {
+const Searchbar = ({ value, onChange }) => {
   const handleOnSubmit = e => {
     e.preventDefault();
     const query = e.currentTarget.elements.input.value;
@@ -22,7 +22,7 @@ const Searchbar = ({ value, onChange, getMoviesByQuery }) => {
       });
     }
 
-    getMoviesByQuery(query);
+    // getMoviesByQuery();
     // e.currentTarget.reset();
   };
 
@@ -51,7 +51,7 @@ const Searchbar = ({ value, onChange, getMoviesByQuery }) => {
 Searchbar.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  getMoviesByQuery: PropTypes.func.isRequired,
+  // getMoviesByQuery: PropTypes.func.isRequired,
 };
 
 export default Searchbar;

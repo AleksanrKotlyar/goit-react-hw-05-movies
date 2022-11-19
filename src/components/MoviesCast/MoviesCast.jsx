@@ -54,7 +54,7 @@ const MoviesCast = () => {
   );
 
   //     {(cast.length > 0) &&
-  //     (<>
+  //     (
   //         <List>
   //         {cast?.map(({ id, name, character, profile_path }) => (
   //           <ListItem key={id}>
@@ -75,10 +75,11 @@ const MoviesCast = () => {
   //           </ListItem>
   //         ))}
   //     </List>
-  //     </>
+
   //     )}
 
-  // {(cast?.length == 0 ) && <div>No information</div> }
+  // {(cast?.length === 0)  && <div>No information</div> }
+  // )
 };
 
 export default MoviesCast;
