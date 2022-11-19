@@ -45,7 +45,7 @@ const Movies = () => {
         onChange={updateQueryString}
         // getMoviesByQuery={getMoviesByQuery}
       />
-      <MoviesList data={visibleMovie} />
+      {movies.length > 0 && <MoviesList data={visibleMovie} />}
     </main>
   );
 };

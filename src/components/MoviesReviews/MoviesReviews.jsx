@@ -26,16 +26,22 @@ const MoviesReviews = () => {
 
   if (!reviews) return;
   return (
-    <Box as="ul" bg="#ff990030" p="8px">
-      {reviews?.map(({ id, author, content }) => (
-        <Item key={id}>
-          <Paragraf>
-            <b>Author: {author} </b>
-          </Paragraf>
-          <Paragraf>{content}</Paragraf>
-        </Item>
-      ))}
-    </Box>
+    <>
+      {reviews.length > 0 ? (
+        <Box as="ul" bg="#ff990030" p="8px">
+          {reviews?.map(({ id, author, content }) => (
+            <Item key={id}>
+              <Paragraf>
+                <b>Author: {author} </b>
+              </Paragraf>
+              <Paragraf>{content}</Paragraf>
+            </Item>
+          ))}
+        </Box>
+      ) : (
+        <div>No information.</div>
+      )}
+    </>
   );
 };
 

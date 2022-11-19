@@ -27,59 +27,37 @@ const MoviesCast = () => {
 
   if (!cast) return;
   return (
-    <List>
-      {cast?.map(({ id, name, character, profile_path }) => (
-        <ListItem key={id}>
-          <img
-            src={
-              profile_path
-                ? `${BASE_URL}${profile_path}`
-                : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ9xblPLFER3Yqo594AP24UPoq-5RzC9sSHg&usqp=CAU'
-            }
-            width="50px"
-            height="60px"
-            alt="photo_actor"
-          />
-          <div>
-            <Paragraf>
-              <b>{name}</b>
-            </Paragraf>
-            <Paragraf>
-              <b>Character:</b> {character}
-            </Paragraf>
-          </div>
-        </ListItem>
-      ))}
-    </List>
+    <>
+      {cast.length > 0 ? (
+        <List>
+          {cast?.map(({ id, name, character, profile_path }) => (
+            <ListItem key={id}>
+              <img
+                src={
+                  profile_path
+                    ? `${BASE_URL}${profile_path}`
+                    : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ9xblPLFER3Yqo594AP24UPoq-5RzC9sSHg&usqp=CAU'
+                }
+                width="50px"
+                height="60px"
+                alt="photo_actor"
+              />
+              <div>
+                <Paragraf>
+                  <b>{name}</b>
+                </Paragraf>
+                <Paragraf>
+                  <b>Character:</b> {character}
+                </Paragraf>
+              </div>
+            </ListItem>
+          ))}
+        </List>
+      ) : (
+        <div>No information.</div>
+      )}
+    </>
   );
-
-  //     {(cast.length > 0) &&
-  //     (
-  //         <List>
-  //         {cast?.map(({ id, name, character, profile_path }) => (
-  //           <ListItem key={id}>
-  //             <img
-  //               src={`${BASE_URL}${profile_path}`}
-  //               width="50px"
-  //               height="60px"
-  //               alt="photo_actor"
-  //             />
-  //             <div>
-  //               <Paragraf>
-  //                 <b>{name}</b>
-  //               </Paragraf>
-  //               <Paragraf>
-  //                 <b>Character:</b> {character}
-  //               </Paragraf>
-  //             </div>
-  //           </ListItem>
-  //         ))}
-  //     </List>
-
-  //     )}
-
-  // {(cast?.length === 0)  && <div>No information</div> }
-  // )
 };
 
 export default MoviesCast;
