@@ -9,15 +9,8 @@ import {
   SearchFormInput,
 } from './Searchbar.styled';
 import toast, { Toaster } from 'react-hot-toast';
-// import { searchMovies } from 'APIMovies/APImovies';
 
 const Searchbar = ({ value, onChange, getMoviesByQuery }) => {
-  // const [query, setQuery] = useState('');
-
-  // const handleOnChange = ({ target: { value } }) => {
-  //   setQuery(value);
-  // };
-
   const handleOnSubmit = e => {
     e.preventDefault();
 
@@ -57,6 +50,10 @@ const Searchbar = ({ value, onChange, getMoviesByQuery }) => {
   );
 };
 
-Searchbar.propTypes = {};
+Searchbar.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  getMoviesByQuery: PropTypes.func.isRequired,
+};
 
 export default Searchbar;
