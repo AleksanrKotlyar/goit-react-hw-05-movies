@@ -31,7 +31,11 @@ const MoviesCast = () => {
       {cast?.map(({ id, name, character, profile_path }) => (
         <ListItem key={id}>
           <img
-            src={`${BASE_URL}${profile_path}`}
+            src={
+              profile_path
+                ? `${BASE_URL}${profile_path}`
+                : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ9xblPLFER3Yqo594AP24UPoq-5RzC9sSHg&usqp=CAU'
+            }
             width="50px"
             height="60px"
             alt="photo_actor"
